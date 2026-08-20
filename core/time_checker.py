@@ -8,5 +8,5 @@ class TimeChecker:
         self.timeleft_till_next_reminder = ((self.chat_time - datetime.now()).total_seconds()) - 30
 
 thirty_mins_before = TimeChecker(19,30,0,0)
-ten_mins_before = TimeChecker(19,45,0,0)
+fifteen_mins_before = TimeChecker(19,45,0,0)
 meet_reminder = TimeChecker(20,0,0,0)

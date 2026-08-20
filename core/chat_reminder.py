@@ -2,13 +2,14 @@ import math
 import os
 
 from pynput.keyboard import Key,Controller
+from dotenv import load_dotenv
 from .time_checker import *
 from time import sleep
 
+load_dotenv()
 
-link = ''
-msg_reminder = """
-"""
+msg_reminder = os.environ["MSG_REMINDER"]
+link = os.environ["GROUP_LINK"]
 kb = Controller()
 
 def multi_line_type(text_to_type):
@@ -20,7 +21,7 @@ def multi_line_type(text_to_type):
         if node == i:
             for j in range(0,len(text[i]),1):
                 if text[i][j] == 'n' and text[i][j+1] == ' ' and text[i][j-1] == ' ':
-                    to_print.append(str(round(meet_reminder.timeleft_till_next_reminder/3600)))
+                    to_print.append(str(math.floor(meet_reminder.timeleft_till_next_reminder/3600)))
                 elif text[i][j] == 'm' and text[i][j+1] == ' ' and text[i][j-1] == ' ':
                     to_print.append(str(round(60*((meet_reminder.timeleft_till_next_reminder/3600) - math.floor(meet_reminder.timeleft_till_next_reminder/3600)))))
                 else:

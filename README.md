@@ -1,19 +1,29 @@
-# Facebook Groupchat Reminder Automation
-An automation project for reminding members of a group chat within a Facebook Messenger group chat. 
+# Automation Group Chat Reminder
+
+An automation project for sending a message to a group chat on Facebook Messenger.
 
 **Solely Tested On:** Linux (Ungoogled Chromium)
 
-**NOTE:** UI and accessibility are not yet developed. Not easily accessible unless parameters within the code are edited.
+****NOTE:**** The UI and accessibility are not yet developed. The project is currently not easily accessible unless the parameters within the code are manually edited.
 
 ## Code Structure
-Three core components of the code are:
 
-1. Timechecker
-1. The chat manager
-1. Window and browser manager
+The code consists of three core components:
 
-The first part anchors which time would the script remind the group chat.
+1. **Timechecker**
+2. **Chat Manager**
+3. **Window and Browser Manager**
 
-The second part circumvents the lack of API available for Facebook Messenger, landing on the group chat website, and manages the multiple line messaging.
+### 1. Timechecker
 
-The third part currently isn't fully finished, the code is meant to open a browser and ensure that the circumvention of UI would be fully executed. Currently, the code only opens the tested browser. Further development would be required.
+The first component determines and anchors the time at which the script will send a reminder to the group chat.
+
+### 2. Chat Manager
+
+The second component handles the lack of an available API for Facebook Messenger. It navigates to the group chat through the website and manages the sending of multiple lines of messages.
+
+### 3. Window and Browser Manager
+
+The third component is responsible for opening and managing the browser, ensuring that the UI automation can be executed properly.
+
+This component is not yet fully finished. Currently, it only opens the tested browser. Further development is required to fully automate and manage the window switching interaction.
