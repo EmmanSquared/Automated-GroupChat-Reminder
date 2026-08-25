@@ -12,5 +12,5 @@ class TimeChecker:
 
 one_hour_before = TimeChecker(19,0,0,0)
 fifteen_mins_before = TimeChecker(19,45,0,0)
-meet_reminder = TimeChecker(20,0,0,0)
+meet_reminder = TimeChecker(19,59,0,0)
 
