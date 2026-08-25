@@ -3,7 +3,13 @@ import core
 bool_node = True
 
 while bool_node:
-    if core.one_hour_before.chat_time > core.datetime.now():
+    if core.afternoon_reminder.chat_time > core.datetime.now():
+        print(f'{core.datetime.now()} Minutes left before reminding: {round(core.afternoon_reminder.timeleft_till_next_reminder/60)}.')
+        print('at afternoon')
+        core.sleep(core.afternoon_reminder.timeleft_till_next_reminder)
+        core.window_tasks()
+
+    elif core.one_hour_before.chat_time > core.datetime.now():
         print(f'{core.datetime.now()} Minutes left before reminding: {round(core.one_hour_before.timeleft_till_next_reminder/60)}.')
         print('at 1 hour')
         core.sleep(core.one_hour_before.timeleft_till_next_reminder)

@@ -10,7 +10,8 @@ class TimeChecker:
         if variable == "timeleft_till_next_reminder":
             return ((self.chat_time - datetime.now()).total_seconds()) - 30
 
-one_hour_before = TimeChecker(19,0,0,0)
 fifteen_mins_before = TimeChecker(19,45,0,0)
-meet_reminder = TimeChecker(19,59,0,0)
+afternoon_reminder = TimeChecker(12,30,0,0)
+one_hour_before = TimeChecker(19,0,0,0)
+meet_reminder = TimeChecker(19,58,0,0)
 
