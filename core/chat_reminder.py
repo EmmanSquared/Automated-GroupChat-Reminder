@@ -9,6 +9,8 @@ from time import sleep
 load_dotenv()
 
 msg_reminder = os.environ["MSG_REMINDER"]
+gmeet_link = os.environ["GMEET_LINK"]
+gmeet_code = os.environ["GMEET_CODE"]
 link = os.environ["GROUP_LINK"]
 kb = Controller()
 
@@ -24,6 +26,10 @@ def multi_line_type(text_to_type):
                     to_print.append(str(math.floor(meet_reminder.timeleft_till_next_reminder/3600)))
                 elif text[i][j] == 'm' and text[i][j+1] == ' ' and text[i][j-1] == ' ':
                     to_print.append(str(round(60*((meet_reminder.timeleft_till_next_reminder/3600) - math.floor(meet_reminder.timeleft_till_next_reminder/3600)))))
+                elif text[i][j] == 'c' and text[i][j+1] == ' ' and text[i][j-1] == ' ':
+                    to_print.append(gmeet_code)
+                elif text[i][j] == 'z' and text[i][j+1] == ' ' and text[i][j-1] == ' ':
+                    to_print.append(gmeet_link)
                 else:
                     to_print.append(text[i][j])
             print(to_print)
